@@ -11,12 +11,14 @@ class TimeSpecificInfo extends Component{
     getBatteryByIdData = async event =>{
             event.preventDefault()
             const {batteryId, specificInfo} = this.state
-            const url="https://localhost:8080/battery-specific-info"
+            const url="https://localhost:8080/battery-averages"
             const options = {
                 method: 'GET',
                 params: {
                     batteryId: `${batteryId}`,
-                    specificData: `${specificInfo}`
+                    specificData: `${specificInfo}`,
+                    startDateTime: `${startDateTime}`,
+                    endDateTime: `${endDateTime}`
                 },
     }
     
